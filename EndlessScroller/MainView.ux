@@ -1,0 +1,63 @@
+<App Theme="Basic">
+	<Panel>
+		<Image ux:Class="Icon" Width="80" Height="80"/>
+
+		<FileImageSource File="Assets/seven.png"      ux:Key="seven" />
+		<FileImageSource File="Assets/banana.png"     ux:Key="banana" />
+		<FileImageSource File="Assets/bar.png"        ux:Key="bar" />
+		<FileImageSource File="Assets/bell.png"       ux:Key="bell" />
+		<FileImageSource File="Assets/cherry.png"     ux:Key="cherry" />
+		<FileImageSource File="Assets/grape.png"      ux:Key="grape" />
+		<FileImageSource File="Assets/lemon.png"      ux:Key="lemon" />
+		<FileImageSource File="Assets/orange.png"     ux:Key="orange" />
+		<FileImageSource File="Assets/watermelon.png" ux:Key="watermelon" />
+
+		<JavaScript>
+			var Observable = require("FuseJS/Observable");
+
+			var items = Observable("seven", "banana", "bar","bell", "cherry", "cherry", "grape", "grape", "orange", "orange","orange","orange","orange");
+
+			module.exports = {
+				items : items
+			};
+		</JavaScript>
+
+		<Grid Columns="1*,1*,1*,1*" Height="300" Background="#aaa"  Margin="30" ClipToBounds="true">
+			<StackPanel Offset="0,-180">
+				<VirtualisationPanel Items="{items}" Running="true" Speed="150" ItemHeight="40"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+			</StackPanel>
+			<StackPanel Offset="0,-80">
+				<VirtualisationPanel Items="{items}" Running="true" Speed="350" ItemHeight="40"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+			</StackPanel>
+			<StackPanel Offset="0,-80">
+				<VirtualisationPanel Items="{items}" Running="true" Speed="250" ItemHeight="40"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+			</StackPanel>
+			<StackPanel Offset="0,-80">
+				<VirtualisationPanel Items="{items}" Running="true" Speed="400" ItemHeight="40"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+				<Cell Width="80" Height="80"/>
+			</StackPanel>
+
+		</Grid>
+	</Panel>
+
+</App>
