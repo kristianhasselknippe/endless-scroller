@@ -1,0 +1,31 @@
+<App Theme="Basic">
+	<Panel Color="Teal">
+		<JavaScript File="MainView.js" />
+		<Panel ux:Class="Icon" Width="50" Height="50"/>
+		<Grid Columns="50,50,50" Height="200" ClipToBounds="True" Color="#ddd" Alignment="HorizontalCenter">
+			<Panel Offset="0,-150">
+				<SlotReel ux:Name="sr1" Speed="90"/>
+				<Each Items="{reel1}">
+					<Icon Color="{}"/>
+				</Each>
+			</Panel>
+			<Panel Offset="0,-150">
+				<SlotReel ux:Name="sr2" Speed="80"/>
+				<Each Items="{reel2}">
+					<Icon Color="{}"/>
+				</Each>
+			</Panel>
+			<Panel Offset="0,-150">
+				<SlotReel ux:Name="sr3" Speed="110"/>
+				<Each Items="{reel3}">
+					<Icon Color="{}"/>
+				</Each>
+			</Panel>
+		</Grid>
+		<Clicked>
+			<SpinTo SlotReel="sr1" ReelPosition="50" />
+			<SpinTo SlotReel="sr2" ReelPosition="50" />
+			<SpinTo SlotReel="sr3" ReelPosition="50" />
+		</Clicked>
+	</Panel>
+</App>
